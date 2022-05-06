@@ -2,12 +2,12 @@ $(document).ready(function(){
 
     $('body').fadeIn()
 
-    $('#random-poke').css('order', '3')
+    $('#random-poke').css('display','none')
     $('#choose-a-poke').css('order', '1')
-    $('#build-a-poke-team').css('display','none')
+    $('#build-a-poke-team').css('order', '3')
     $('#poke-img').css('display', 'none')
 
-    //Funções para requisição de dados do Pokémon
+    //Funções para geração de novos Pokémons
 
     const changeExhibitedData = (name, image) =>{
         $('#poke-img').fadeOut()
@@ -27,24 +27,29 @@ $(document).ready(function(){
         //
     }
 
-    const getPokemonGeneration = (poke) =>{
-        const url = `https://pokeapi.co/api/v2/pokemon/${poke}`
+    const randomNumberGeneration = () =>{
+        return Math.floor(Math.random() * (897 - 1) + 1);
+    }
 
-        if(poke != ''){
+    const randomPokemonGeneration = () =>{
+        var randomNumber = randomNumberGeneration()
+        if(randomNumber >= 0 && randomNumber <= 600){
+            const url = `https://pokeapi.co/api/v2/pokemon/${randomNumber}`
+
             fetch(url, {
                 method: 'GET'
-            }).then(response=>{
+            }).then(response =>{
                 return response.json()
             }).then(data =>{
                 changeExhibitedData(data.name, data.sprites.front_default)
                 changeExhibitedStats(data.stats)
             })
         }
+
     }
 
-    $('#get-poke-btn').click(function(){
-        var poke = $('#poke-id').val()
-        getPokemonGeneration(poke)
+    $('#random-poke-btn').click(function(){
+        randomPokemonGeneration()
     })
 
 })

@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+}
+
+body{
+    display: none;
+    background-color: black;
+    position: relative;
+}
+
+h1{
+    font-size: 32px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+h2{
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+}
+
+h3{
+    font-size: 18.72px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+
+h4{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+
+h5{
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+
+h6{
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
