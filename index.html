@@ -16,60 +16,69 @@
         <link rel="stylesheet" href="css/styles.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="js/functions.js"></script>
+        <script src="js/global.functions.js"></script>
     </head>
 
     <body>
 
         <header>
-            <img src=""/>
-            <a href="">Back to projects</a>
+            <div class="container">
+                <img src="assets/logo.png" class="site-logo" />
+                <h1>
+                    PokéPlace
+                </h1>
+            </div><!--container-->
+            <button id="header-btn"></button>
         </header>
         <main>
-            <h1>
-                Snap <br> Adventure
-            </h1>
+            <div class="exhibition">
+                <h1>
+                    Snap <br> Adventure
+                </h1>
+            </div><!--exhibition-->
         </main>
         <section>
             <h2>
                 Some Features
             </h2>
-            <button id="">
-                <img src="" />
-                <div class="container">
-                    <h3>
-
-                    </h3>
-                    <h5>
-
-                    </h5>
-                </div><!--container-->
-            </button>
-            <button id="">
-                <img src="" />
-                <div class="container">
-                    <h3>
-
-                    </h3>
-                    <h5>
-
-                    </h5>
-                </div><!--container-->
-            </button>
-            <button id="">
-                <img src="" />
-                <div class="container">
-                    <h3>
-
-                    </h3>
-                    <h5>
-
-                    </h5>
-                </div><!--container-->
-            </button>
+            <div class="container">
+                <button id="whos-your-pokemon-nav">
+                    <img src="assets/icons/function-1-logo.png" />
+                    <div class="container">
+                        <h3>
+                            Who's Your Pokémon
+                        </h3>
+                        <h5>
+                            Try and see what pokemon you will get
+                        </h5>
+                    </div><!--container-->
+                </button>
+                <button id="choose-your-pokemon-nav">
+                    <img src="assets/icons/function-2-logo.png" />
+                    <div class="container">
+                        <h3>
+                            Choose Your Pokémon
+                        </h3>
+                        <h5>
+                            Choose Your Pokémon Buddy
+                        </h5>
+                    </div><!--container-->
+                </button>
+                <button id="build-your-team-nav">
+                    <img src="assets/icons/function-3-logo.png" />
+                    <div class="container">
+                        <h3>
+                            Build Your Team
+                        </h3>
+                        <h5>
+                            Build A Fierce Pokémon Team
+                        </h5>
+                    </div><!--container-->
+                </button>
+            </div><!--container-->
         </section>
-        <footer>
-            
-        </footer>
+
+        <div class="modal-container"></div><!--modal-container-->
 
     </body>
 

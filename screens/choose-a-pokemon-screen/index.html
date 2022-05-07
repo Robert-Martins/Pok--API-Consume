@@ -9,95 +9,66 @@
         <meta name="author" content="@Robert-Martins">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
-        <link href="../../css/styles.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <link href="../../css/global.styles.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="../../js/global.functions.js"></script>
+        <script src="js/functions.js"></script>
     </head>
 
     <body>
+        
         <header>
-            <h1>
-                PokéSite
-            </h1>
-            <a href="../../index.html" id="random-poke">Who's Your Pokémon?</a>
-            <a href="" id="choose-a-poke">Choose Your Pokémon</a>
-            <a href="../build-a-pokemon-team/index.html" id="build-a-poke-team">Build Your Team</a>
+            <div class="container">
+                <img src="../../assets/logo.png" class="site-logo" />
+                <h1>
+                    PokéPlace
+                </h1>
+            </div><!--container-->
+            <button id="header-btn"></button>
         </header>
+        <main>
+            <div class="exhibition">
+                <h1>
+                    Choose Your <br> Pokémon
+                </h1>
+            </div><!--exhibition-->
+            <div class="poke-show">
+                <h3>
+                    Your Pokémon Is
+                </h3>
+                <h2 id="poke-name"></h2>
+                <div class="container">
+                    <img id="poke-img" src="" />
+                </div><!--poke-container-->
+            </div><!--poke-show-->
+            <div class="poke-check">
+
+            </div><!--poke-check-->
+        </main>
         <section>
-            <aside class="habilities-container">
-                <div style="display: flex">
-                    <h2>
-                        HP:
-                    </h2>
-                    <h2 id="stat-0"></h2>
-                </div>
-                <div style="display: flex">
-                    <h2>
-                        Attack:
-                    </h2>
-                    <h2 id="stat-1"></h2>
-                </div>
-                <div style="display: flex">
-                    <h2>
-                        Defense:
-                    </h2>
-                    <h2 id="stat-2"></h2>
-                </div>
-                <div style="display: flex">
-                    <h2>
-                        Special-attack:
-                    </h2>
-                    <h2 id="stat-3"></h2>
-                </div>
-                <div style="display: flex">
-                    <h2>
-                        Special-defense:
-                    </h2>
-                    <h2 id="stat-4"></h2>
-                </div>
-                <div style="display: flex">
-                    <h2>
-                        Speed:
-                    </h2>
-                    <h2 id="stat-5"></h2>
-                </div>
-            </aside><!--habilities-container-->
-            <main>
-                <div class="main-callouts">
-                    <h1>
-                        Choose Your Pokémon
-                    </h1>
-                    <h4>
-                        Search a pokémon by name or pokédex ID
-                    </h4>
-                </div><!--main-callouts-->
-                <div class="main-exhibition">
-                    <h3>
-                        Your Pokémon is
-                    </h3>
-                    <h2 id="poke-name"></h2>
-                    <img src="" class="poke-img" id="poke-img"/>
-                </div><!--main-exhibition-->
-                <div class="main-generate">
-                    <input name="poke-id" type="text" id="poke-id" placeholder="Insert the Pokémon Name or Id" />
-                    <button class="request-btn" id="choose-a-poke-btn">
-                        Generate
-                    </button>
-                </div><!--main-generate-->
-            </main>
-            <aside class="types-container">
-
-            </aside><!--types-container-->
+            <h2>
+                Try the feature
+            </h2>
+            <div class="container">
+                <input id="poke-id" type="text" placeholder="Type the Pokémon name or ID" />
+                <button id="generate-btn">
+                    <img src="../../assets/icons/function-2-tab-logo.png" />
+                    <div class="container">
+                        <h3>
+                            Let's See Your Pokémon
+                        </h3>
+                        <h5>
+                            Who Will Be Your Buddy?
+                        </h5>
+                    </div><!--container-->
+                </button>
+            </div><!--container-->
         </section>
-        <footer>
-            <h3>
-                Site para prática e estudo
-            </h3>
-            <h4>
-                Um produto de @Robert-Martins
-            </h4>
-        </footer>
-
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="js/functions.js"></script>
+        
     </body>
 
 </html>

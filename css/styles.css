@@ -1,0 +1,7 @@
+body{
+    display: none;
+    background-image: url('../assets/home-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

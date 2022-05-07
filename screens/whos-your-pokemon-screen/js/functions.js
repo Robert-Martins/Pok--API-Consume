@@ -2,9 +2,6 @@ $(document).ready(function(){
 
     $('body').fadeIn()
 
-    $('#random-poke').css('display','none')
-    $('#choose-a-poke').css('order', '1')
-    $('#build-a-poke-team').css('order', '3')
     $('#poke-img').css('display', 'none')
 
     //Funções para geração de novos Pokémons
@@ -48,7 +45,7 @@ $(document).ready(function(){
 
     }
 
-    $('#random-poke-btn').click(function(){
+    $('#generate-btn').click(function(){
         randomPokemonGeneration()
     })
 

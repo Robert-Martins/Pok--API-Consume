@@ -2,9 +2,6 @@ $(document).ready(function(){
 
     $('body').fadeIn()
 
-    $('#random-poke').css('order', '1')
-    $('#choose-a-poke').css('display','none')
-    $('#build-a-poke-team').css('order', '3')
     $('#poke-img').css('display', 'none')
 
     //Funções para requisição de dados do Pokémon
@@ -42,7 +39,7 @@ $(document).ready(function(){
         }
     }
 
-    $('#choose-a-poke-btn').click(function(){
+    $('#generate-btn').click(function(){
         var poke = $('#poke-id').val()
         getPokemonData(poke)
     })
