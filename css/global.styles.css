@@ -10,6 +10,7 @@ html,body{
 
 body{
     display: none;
+    overflow-x: hidden;
 }
 
 h1{
@@ -188,6 +189,11 @@ section .container button:hover, div.modal-container .menu-modal a:hover{
     color: black;
 }
 
+section .container button.disabled{
+    opacity: 0;
+    cursor: default;
+}
+
 section .container button img, div.modal-container .menu-modal a img{
     width: 64px;
     height: 64px;
@@ -197,6 +203,18 @@ section .container button img, div.modal-container .menu-modal a img{
 section .container button > .container{
     width: 100%;
     height: 100%;
+}
+
+section .container #generate-btn{
+    order: 2;
+}
+
+section .container #pokedex-btn{
+    order: 1;
+}
+
+section .btn-container{
+    display: flex;
 }
 
 section .container button > .container h3{
@@ -210,10 +228,16 @@ section .container button > .container h5{
     opacity: 0.4;
 }
 
+section .flex-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 div.modal-container{
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.7);
@@ -250,10 +274,120 @@ div.modal-container .menu-modal a h3{
     margin-top: 32px;
 }
 
+div.modal-container .pokedex-modal{
+    width: 72%;
+    height: 80%;
+    background-color: white;
+    border-radius: 16px;
+    border: rgb(212, 212, 212) 3px solid;
+    text-align: center;
+}
+
+div.modal-container .pokedex-modal > h3{
+    width: calc(100% + 6px);
+    transform: translate(-3px, -3px);
+    color: white;
+    font-weight: 600;
+    background-color: rgb(212, 212, 212);
+    padding: 12px;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+}
+
+div.modal-container .pokedex-modal > .container{
+    height: 90%;
+    padding: 12px;
+    text-align: center;
+    overflow-y: scroll;
+}
+
+div.modal-container .pokedex-modal .data-container{
+    width: 420px;
+    height: 240px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 4px 8px;
+    border-bottom: rgb(235, 235, 235) 4px solid;
+}
+
+div.modal-container .pokedex-modal .data-container h3{
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+div.modal-container .pokedex-modal .data-container img{
+    width: 160px;
+    height: 160px;
+}
+
+div.modal-container .pokedex-modal .text-style h4{
+    text-align: initial;
+    margin: 4px 0;
+}
+
+@media screen and (max-width: 1260px){
+    div.modal-container .pokedex-modal{
+        width: 84%;
+    }
+}
+
+@media screen and (max-width: 1080px){
+    div.modal-container .pokedex-modal{
+        width: 90%;
+    }
+}
+
 @media screen and (max-width: 1050px){
 
     section .container{
         flex-direction: column;
     }
 
+    section .container #generate-btn{
+        order: 1;
+    }
+
+    section .container #pokedex-btn{
+        order: 2;
+    }
+
+    section .btn-container{
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width: 850px){
+    main{
+        height: 75%;
+        flex-direction: column;
+    }
+
+    main .exhibition, main .poke-show{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    main .poke-check{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 540px){
+    div.modal-container .pokedex-modal .data-container{
+        width: 320px;
+    }
+}
+
+@media screen and (max-width: 450px){
+    header .container{
+        left: 4%
+    }
+
+    header button{
+        right: 4%;
+    }
 }
