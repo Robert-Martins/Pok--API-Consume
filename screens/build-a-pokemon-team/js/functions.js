@@ -6,7 +6,9 @@ $(document).ready(function(){
 
     //Funções para requisição de dados do Pokémon
 
-    var pokemonData = ([]) //Variável para guardar os objeto de dados do Pokémon
+    var pokemonData = {} //Variável para guardar os objeto de dados do Pokémon
+
+    var teamData = []
 
     var didRequest = false
 
@@ -20,7 +22,7 @@ $(document).ready(function(){
     }
 
     const getPokémonData = (data) =>{
-        pokemonData = data;
+        pokemonData = data
     }
 
     const changePokedexData = () =>{
@@ -66,9 +68,10 @@ $(document).ready(function(){
         })
     }
 
-    const showPokedexBtn = () =>{
+    const showBtns = () =>{
         didRequest = true
         $('#pokedex-btn').removeClass('disabled')
+        $('#team-btn').removeClass('disabled')
     }
 
     const randomNumberGeneration = (max, min) =>{
@@ -86,7 +89,7 @@ $(document).ready(function(){
             }).then(data =>{
                 changeExhibitedData(data.name, data.sprites.front_default)
                 getPokémonData(data)
-                if(didRequest == false) showPokedexBtn()
+                if(didRequest == false) showBtns()
             })
         }
     }
@@ -157,6 +160,50 @@ $(document).ready(function(){
         if(!($(e.target).closest('.pokedex-modal').length > 0)){
             closePokedexModal()
         }
+    })
+
+    //Funções para inserção de pokémon no time
+
+    const checkPokemonOnTeam = (id) =>{
+        const elem = teamData.find(function(val){
+            return val.id = id
+        })
+        if(elem){
+            return true
+        }
+        else{
+            return false
+        }
+    }
+
+    const checkMaxTeamSize = () =>{
+        if(teamData.length == 6){
+            return true
+        }
+        else{
+            return false
+        }
+    }
+
+    const insertPokemonOnTeam = () =>{
+        if(checkMaxTeamSize()){
+            console.log(checkMaxTeamSize())
+            return console.log("Max team size reached")
+        }
+        if(checkPokemonOnTeam(pokemonData.id)){
+            return console.log("Pokémon is already on the team")
+        }
+        else{
+            teamData.push(pokemonData)
+        }
+    }
+
+    $('#team-btn').click(function(){
+        insertPokemonOnTeam()
+        console.log('==========Pokemon atual==========')
+        console.log(pokemonData)
+        console.log('==========Time atual==========')
+        console.log(teamData)
     })
 
     //Funções para inclusão de botões na modal de menu

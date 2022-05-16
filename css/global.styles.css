@@ -213,6 +213,10 @@ section .container #pokedex-btn{
     order: 1;
 }
 
+section .container #team-btn{
+    order: 3;
+}
+
 section .btn-container{
     display: flex;
 }
