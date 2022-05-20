@@ -11,6 +11,7 @@ html,body{
 body{
     display: none;
     overflow-x: hidden;
+    background-color: black;
 }
 
 h1{
@@ -135,6 +136,40 @@ main .poke-show .container{
 
 main .poke-check{
     width: 30%;
+    padding-top: 42px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main .poke-check #team-container{
+    text-align: center;
+}
+
+main .poke-check #team-container > img{
+    width: 120px;
+    height: 120px;
+    margin: 4px;
+    border: 2px solid white;
+    display: inline-block;
+}
+
+main .poke-check #team-container > button{
+    width: 200px;
+    height: 80px;
+    margin: 8px auto;
+    display: block;
+    background-color: white;
+    border: black 1px solid;
+    border-radius: 20px;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
 }
 
 section{
@@ -363,20 +398,16 @@ div.modal-container .pokedex-modal .text-style h4{
 
 @media screen and (max-width: 850px){
     main{
-        height: 75%;
+        height: 160%;
         flex-direction: column;
     }
 
-    main .exhibition, main .poke-show{
+    main .exhibition, main .poke-show, main .poke-check{
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-    }
-
-    main .poke-check{
-        display: none;
     }
 }
 
