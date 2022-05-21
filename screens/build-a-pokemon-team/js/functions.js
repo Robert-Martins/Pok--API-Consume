@@ -25,11 +25,11 @@ $(document).ready(function(){
         pokemonData = data
     }
 
-    const changePokedexData = () =>{
-        changeExhibitedInfo(pokemonData)
-        changeExhibitedMoves(pokemonData.moves)
-        changeExhibitedTypes(pokemonData.types)
-        changeExhibitedStats(pokemonData.stats)
+    const changePokedexData = (pokedexData) =>{
+        changeExhibitedInfo(pokedexData)
+        changeExhibitedMoves(pokedexData.moves)
+        changeExhibitedTypes(pokedexData.types)
+        changeExhibitedStats(pokedexData.stats)
     }
 
     const changeExhibitedInfo = (info) =>{
@@ -60,10 +60,8 @@ $(document).ready(function(){
 
     const changeExhibitedStats = (stats) =>{
         el = $('.pokedex-stats')
-        let statCount = 0;
         el.html('')
         stats.map(function(val){
-            statCount++
             el.append('<h4>'+val.stat.name+': '+val.base_stat+'</h4>')
         })
     }
@@ -146,12 +144,13 @@ $(document).ready(function(){
 
     const closePokedexModal = () =>{
         $('body').css('overflow', 'auto')
+        $('body').css('overflow-x', 'hidden')
         $('#pokedex-modal-container').fadeOut()
     }
 
     $('#pokedex-btn').click(function(){
         if(didRequest){
-            changePokedexData()
+            changePokedexData(pokemonData)
             openPokedexModal()
         }
     })
@@ -188,17 +187,25 @@ $(document).ready(function(){
         $('#team-container').html('')
         teamData.map((val)=>{
             $('#team-container').append(`
-                <img src="${val.sprites.front_default}" />
+                <img id="pokemon-img" src="${val.sprites.front_default}" />
             `)
         })
-        $('#team-container').append(`
-            <button>Check Team</button>
-        `)
+        $('#team-modal-btn').css('display', 'block')
+    }
+
+    const pokemonOnPokedex = () =>{
+        
     }
 
     const storageSave = () =>{
         let userTeam = JSON.stringify(teamData)
         window.localStorage.setItem("Team", userTeam)
+    }
+
+    const deleteTeam = () =>{
+        window.localStorage.removeItem("Team")
+        teamData = []
+        location.reload()
     }
 
     const checkLocalStorage = () =>{
@@ -234,12 +241,43 @@ $(document).ready(function(){
     $('body').append(`
     <div id="team-modal-container" class="modal-container">
         <div class="team-modal">
-            
+            <h3>YOUR TEAM</h3>
+            <div class="pokemon-container">
+
+            </div><!--pokemon-container-->
+            <div class="modal-btn-container">
+                <button id="clear-team-btn">CLEAR TEAM</button>
+            </div><!--modal-btn-container-->
         </div><!--team-modal-->
     </div><!--modal-container-->
     `)
 
-    //Funções para exibição de modal de menu
+    //Funções para exibição de modal de time
+
+    const openTeamModal = () =>{
+        $('body').css('overflow', 'hidden')
+        $('#team-modal-container').fadeIn()
+    }
+
+    const closeTeamModal = () =>{
+        $('body').css('overflow', 'auto')
+        $('body').css('overflow-x', 'hidden')
+        $('#team-modal-container').fadeOut()
+    }
+
+    $('#team-modal-btn').click(function(){
+        openTeamModal()
+    })
+
+    $('#clear-team-btn').click(function(){
+        deleteTeam()
+    })
+
+    $('div#team-modal-container').click(function(e){
+        if(!(($(e.target).closest(".team-modal").length > 0))){
+            closeTeamModal()
+        }
+    })
 
     //Funções para inclusão de botões na modal de menu
 
@@ -278,6 +316,7 @@ $(document).ready(function(){
 
     const closeMenuModal = () =>{
         $('body').css('overflow', 'auto')
+        $('body').css('overflow-x', 'hidden')
         $('#menu-modal-container').fadeOut()
     }
 
