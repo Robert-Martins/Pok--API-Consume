@@ -252,31 +252,10 @@ $(document).ready(function(){
     </div><!--modal-container-->
     `)
 
-    //Funções para exibição de modal de time
-
-    const openTeamModal = () =>{
-        $('body').css('overflow', 'hidden')
-        $('#team-modal-container').fadeIn()
-    }
-
-    const closeTeamModal = () =>{
-        $('body').css('overflow', 'auto')
-        $('body').css('overflow-x', 'hidden')
-        $('#team-modal-container').fadeOut()
-    }
+    //Funções para deleção de time
 
     $('#team-modal-btn').click(function(){
-        openTeamModal()
-    })
-
-    $('#clear-team-btn').click(function(){
         deleteTeam()
-    })
-
-    $('div#team-modal-container').click(function(e){
-        if(!(($(e.target).closest(".team-modal").length > 0))){
-            closeTeamModal()
-        }
     })
 
     //Funções para inclusão de botões na modal de menu
