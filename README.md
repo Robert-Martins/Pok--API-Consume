@@ -1,6 +1,6 @@
 ## PokéSite
 
-<img src="https://img.shields.io/badge/Status-Development-green" /> <img src="https://img.shields.io/badge/Version-0.1.0-green" />
+<img src="https://img.shields.io/badge/Status-Done-green" /> <img src="https://img.shields.io/badge/Version-1.0.0-green" />
 
 <br>
 
@@ -11,10 +11,6 @@ O projeto se trata de um site de entretenimento que permite que usuários tentem
 O desenvolvimento do projeto tem como objetivo estudar e desenvolver o domínio acerca de tecnologias de desenvolvimento de software.
 
 Esse projeto possui integração com a API PokéAPI. Foram criadas funcionalidades para que os dados da API servissem ao propósito do projeto.
-
-<br>
-
-### Funcionalidades do projeto
 
 <br>
 
@@ -42,11 +38,7 @@ Para realizar implementações, basta criar branches com o nome da feature a ser
 
 ### Seguimento do projeto
 
-Próximos passos:
-
-- Implementar alteração de componentes do time
-
-- Implementar funcionalidade de tirar print do pokémon e do time
+O objetivo do projeto foi atingido.
 
 <br>
 
